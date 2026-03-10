@@ -10,7 +10,7 @@ The analysis is built using SQL queries in PostgreSQL and visualized through an 
 
 ## Dashboard Preview
 
-![Dashboard]<img width="1292" height="1168" alt="image" src="https://github.com/user-attachments/assets/43fbb478-3cce-4650-bcff-54dbd1f7a14f" />
+<img width="1292" height="1168" alt="image" src="https://github.com/user-attachments/assets/43fbb478-3cce-4650-bcff-54dbd1f7a14f" />
 
 
 ---
