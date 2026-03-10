@@ -98,6 +98,16 @@ images/
 
 ---
 
+## How to Run
+
+1. Clone this repository
+2. Import dataset into PostgreSQL
+3. Run SQL scripts in order
+4. Open Power BI dashboard (.pbix)
+5. Refresh data connection
+   
+---
+
 ## Tools & Technologies
 
 - PostgreSQL
