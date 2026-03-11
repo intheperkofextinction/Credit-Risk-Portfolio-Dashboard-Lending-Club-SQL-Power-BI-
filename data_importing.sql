@@ -1,3 +1,51 @@
+-- ============================================================
+-- Project: Credit Risk Portfolio Dashboard
+-- Author: Amal S
+-- Tool: PostgreSQL
+--
+-- Description:
+-- This SQL script creates the raw staging table used to ingest
+-- the Lending Club loan dataset into PostgreSQL. The purpose
+-- of this table is to store the dataset exactly as it appears
+-- in the source CSV file before any transformations or data
+-- cleaning are applied.
+--
+-- All columns are initially defined as TEXT to ensure that the
+-- dataset can be imported without type conflicts or formatting
+-- issues. This staging approach is commonly used in data
+-- engineering pipelines where raw data is loaded first and
+-- then transformed in later processing stages.
+--
+-- The script performs three main steps:
+--
+-- 1. Create the "loan_raw" table
+--    - Defines the full schema of the Lending Club dataset
+--    - Stores borrower information, loan details, payment
+--      history, and credit attributes
+--
+-- 2. Import the dataset
+--    - Uses the PostgreSQL COPY command to load the CSV file
+--      directly into the loan_raw table
+--    - Preserves the original data structure for auditing
+--      and reproducibility
+--
+-- 3. Validate the import
+--    - Retrieves a sample of records from the table to confirm
+--      successful data ingestion
+--
+-- Key data categories stored in this table include:
+--   • Loan information (loan amount, interest rate, term)
+--   • Borrower financial profile (income, employment, DTI)
+--   • Credit history indicators
+--   • Loan performance metrics
+--   • Payment and recovery information
+--
+-- This table serves as the raw data staging layer for the
+-- project. Subsequent scripts transform this dataset into a
+-- cleaned analytical table (loans_clean) used for credit risk
+-- analysis and Power BI dashboard reporting.
+-- ============================================================
+
 ------ CREATEING TABLE FOR RAW DATA-----------
 
 CREATE TABLE loan_raw (
@@ -85,4 +133,5 @@ CSV HEADER;
 
 SELECT *
 FROM loan_raw
+
 limit 10;
