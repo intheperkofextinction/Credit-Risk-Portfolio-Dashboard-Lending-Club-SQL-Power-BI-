@@ -1,3 +1,47 @@
+-- ============================================================
+-- Project: Credit Risk Portfolio Dashboard
+-- Author: Amal S
+-- Tool: PostgreSQL
+--
+-- Description:
+-- This SQL script creates a portfolio-level capital adequacy
+-- summary used to evaluate whether the lending portfolio has
+-- sufficient capital to absorb potential credit losses.
+--
+-- The script aggregates key credit risk metrics from the
+-- loans_clean dataset and estimates Expected Credit Loss (ECL)
+-- using the standard credit risk formula:
+--
+--        Expected Loss = PD × LGD × Exposure
+--
+-- Key calculations performed:
+--   • Total loan portfolio exposure
+--   • Probability of Default (PD)
+--   • Loss Given Default (LGD)
+--   • Net realized loss from defaulted loans
+--   • Expected credit loss (ECL)
+--   • Capital buffer assumption (10% of exposure)
+--   • Capital adequacy after accounting for expected loss
+--
+-- The resulting view provides a simplified capital adequacy
+-- assessment similar to those used in banking risk management
+-- frameworks such as Basel capital requirements.
+--
+-- Key metrics generated:
+--   • Total Portfolio Exposure
+--   • Probability of Default (PD)
+--   • Loss Given Default (LGD)
+--   • Expected Credit Loss
+--   • Net Loss
+--   • Capital Buffer
+--   • Capital Ratio
+--   • Remaining Capital After Expected Loss
+--
+-- This view supports risk monitoring and helps evaluate
+-- whether the portfolio maintains sufficient capital to
+-- withstand potential loan defaults.
+-- ============================================================
+
 CREATE OR REPLACE VIEW capital_adequacy_summary AS
 WITH base AS (
     SELECT
@@ -53,4 +97,5 @@ SELECT
 FROM risk_calc;
 
 SELECT * FROM capital_adequacy_summary;
+
 
