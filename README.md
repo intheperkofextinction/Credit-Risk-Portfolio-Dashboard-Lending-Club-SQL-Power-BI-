@@ -55,6 +55,10 @@ Measures whether the institution holds enough capital to cover potential credit 
 - Expected credit loss: **₹520M**
 - Lower credit grades contribute the largest share of expected losses.
 - Capital ratio currently sits at **10% vs 12% target**, indicating limited capital buffer.
+-  Grade F and G loans show the highest expected loss
+- Default rate increases significantly in lower credit grades
+- Portfolio expected loss represents X% of total exposure
+- Risk-adjusted return remains positive due to high interest income
 
 ---
 
